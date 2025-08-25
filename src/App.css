@@ -13,6 +13,7 @@ body, .container {
   justify-content: space-between;
   padding: 24px 36px;
   background: transparent;
+  flex-wrap: wrap; /* allow wrapping */
 }
 
 .logo {
@@ -28,17 +29,15 @@ body, .container {
   font-size: 18px;
 }
 
-.nav-links li button {
-  background: none;
-  border: none;
+.nav-btn {
+  text-decoration: none;
   font-size: 18px;
-  cursor: pointer;
   color: #444;
-  transition: color 0.3s, transform 0.3s;
   font-weight: bolder;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.nav-links li button:hover {
+.nav-btn:hover {
   color: #a084f9;
   transform: translateY(-2px);
 }
@@ -48,10 +47,9 @@ body, .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;   /* reduce from 80px */
+  gap: 30px;
   padding: 20px 50px;
 }
-
 
 .hero-row {
   display: flex;
@@ -99,11 +97,6 @@ body, .container {
   font-size: 18px;
 }
 
-.social-icons span {
-  font-size: 28px;
-  margin: 0 5px;
-}
-
 .hero-btn {
   background: #a084f9;
   color: #fff;
@@ -127,8 +120,7 @@ body, .container {
 /* ABOUT */
 .about {
   text-align: center;
-  margin: 64px 0 100px ;
-  
+  margin: 64px 0 100px;
 }
 
 .about-h2 {
@@ -142,6 +134,7 @@ body, .container {
   margin: 40px auto 0 auto;
   max-width: 900px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .about-cards > div {
@@ -218,6 +211,7 @@ body, .container {
   gap: 24px;
   justify-content: center;
   margin-top: 32px;
+  flex-wrap: wrap;
 }
 
 .project-item {
@@ -281,6 +275,7 @@ body, .container {
   gap: 28px;
   justify-content: center;
   margin-top: 36px;
+  flex-wrap: wrap;
 }
 
 .contact-cards > div {
@@ -305,25 +300,9 @@ body, .container {
   color: #a084f9;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .about-cards,
-  .contact-cards,
-  .project-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-item,
-  .contact-cards > div,
-  .about-cards > div {
-    width: 90%;
-    max-width: 320px;
-  }
-}
-
+/* Full Height Hero */
 .full-height {
-  min-height: 40h; /* Full screen */
+  min-height: 40vh; /* fixed */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -331,7 +310,7 @@ body, .container {
 }
 
 .big-heading {
-  font-size: 4rem; /* Bigger name */
+  font-size: 4rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
   margin-left: 50px;
@@ -344,7 +323,7 @@ body, .container {
 }
 
 .large-photo {
-  width: 450px; /* Bigger profile image */
+  width: 450px;
   height: 450px;
   object-fit: cover;
   border-radius: 50%;
@@ -352,30 +331,101 @@ body, .container {
   margin-right: 60px;
 }
 
-
-/* Smooth scroll effect */
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Make nav links look like links */
-.nav-btn {
-  text-decoration: none;
-  font-size: 18px;
-  color: #444;
-  font-weight: bolder;
-  transition: color 0.3s, transform 0.3s;
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .hero-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-desc,
+  .big-heading,
+  .large-subtitle {
+    margin-left: 0;
+  }
+
+  .large-photo {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    gap: 20px;
+    font-size: 16px;
+  }
 }
 
-.nav-btn:hover {
-  color: #a084f9;
-  transform: translateY(-2px);
+/* Mobile phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .big-heading {
+    font-size: 2.5rem;
+  }
+
+  .large-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-h2,
+  .skills-title,
+  .projects-h2,
+  .contact-h2 {
+    font-size: 2rem;
+  }
+
+  .skills-list {
+    gap: 10px;
+  }
+
+  .large-photo {
+    width: 220px;
+    height: 220px;
+  }
 }
 
-/* Make project cards clickable (like links) */
-.project-item {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
+/* Extra small screens */
+@media (max-width: 400px) {
+  .big-heading {
+    font-size: 2rem;
+  }
 
+  .large-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+}

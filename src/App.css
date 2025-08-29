@@ -8,39 +8,40 @@ body, .container {
 
 /* NAVBAR */
 .navbar {
+  background-color: #1a1a1a;   
+  color: #f0f0f0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 24px 36px;
-  background: transparent;
-  flex-wrap: wrap; /* allow wrapping */
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #a084f9;  
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
-  color: #a084f9;
+  color: #a084f9;  
 }
 
 .nav-links {
-  display: flex;
-  gap: 32px;
   list-style: none;
-  font-size: 18px;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-btn {
+.nav-links li a {
+  color: #f0f0f0;
   text-decoration: none;
-  font-size: 18px;
-  color: #444;
-  font-weight: bolder;
-  transition: color 0.3s, transform 0.3s;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.nav-btn:hover {
+.nav-links li a:hover {
   color: #a084f9;
-  transform: translateY(-2px);
 }
+
 
 /* HERO */
 .hero {
@@ -272,19 +273,19 @@ body, .container {
 
 .contact-cards {
   display: flex;
-  gap: 28px;
+  gap: 30px;
   justify-content: center;
   margin-top: 36px;
   flex-wrap: wrap;
+  flex: 0 0 300px;
 }
 
 .contact-cards > div {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 2px 16px #b6b3f333;
-  padding: 32px;
-  flex: 1;
-  min-width: 200px;
+  flex: 0 0 600px;
+  min-width: 100px;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
@@ -300,9 +301,43 @@ body, .container {
   color: #a084f9;
 }
 
+/* FOOTER */
+.footer {
+  background-color: #1a1a1a;  /* dark footer */
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  border-top: 2px solid #a084f9;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #a084f9;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
 /* Full Height Hero */
 .full-height {
-  min-height: 40vh; /* fixed */
+  min-height: 40vh; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -336,9 +371,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
 
-/* Tablets & small laptops */
 @media (max-width: 1024px) {
   .hero-row {
     flex-direction: column;
@@ -370,7 +403,7 @@ html {
   }
 }
 
-/* Mobile phones */
+
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -415,7 +448,7 @@ html {
   }
 }
 
-/* Extra small screens */
+
 @media (max-width: 400px) {
   .big-heading {
     font-size: 2rem;
@@ -429,3 +462,6 @@ html {
     font-size: 0.95rem;
   }
 }
+
+
+

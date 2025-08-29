@@ -10,6 +10,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }
@@ -198,11 +199,7 @@ function Contact() {
       title: "Email",
       text: "nethra.krish0906@gmail.com",
     },
-    {
-      icon: "📞",
-      title: "Phone",
-      text: "+91 95566 52494",
-    },
+
     {
       icon: "📍",
       title: "Location",
@@ -231,5 +228,26 @@ function Contact() {
     </section>
   );
 }
+
+// FOOTER
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} Nethra Krishnan. All rights reserved.</p>
+      <div className="footer-links">
+        <a href="https://github.com/nethra0906" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/nethrakrishnan/" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="mailto:nethra.krish0906@gmail.com">
+          Email
+        </a>
+      </div>
+    </footer>
+  );
+}
+
 
 export default App;

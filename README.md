@@ -23,3 +23,6 @@ Styling: CSS Flexbox & Grid (custom styles, no heavy UI frameworks)
 
 Version Control: Git & GitHub
 
+# Deployed Website 
+https://nethra-krishnan-portfolio.netlify.app/
+

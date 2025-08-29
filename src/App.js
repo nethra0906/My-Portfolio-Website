@@ -187,9 +187,22 @@ function Projects() {
           </a>
         ))}
       </div>
+
+      {/* More Projects Button */}
+      <div className="more-projects">
+        <a
+          href="https://github.com/nethra0906"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="more-btn"
+        >
+          View More Projects →
+        </a>
+      </div>
     </section>
   );
 }
+
 
 // CONTACT
 function Contact() {

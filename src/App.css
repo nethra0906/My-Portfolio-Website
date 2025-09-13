@@ -12,8 +12,9 @@ body, .container {
   color: #f0f0f0;
   display: flex;
   justify-content: space-between;
-  padding: 24px 36px;
-  background: transparent;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #a084f9;  
 }
 
 .logo {
@@ -42,12 +43,13 @@ body, .container {
 }
 
 
+
 /* HERO */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;   /* reduce from 80px */
+  gap: 30px;   
   padding: 20px 50px;
 }
 
@@ -214,10 +216,12 @@ body, .container {
 
 .project-gallery {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;   
+  gap: 120px;         
   justify-content: center;
   margin-top: 32px;
 }
+
 
 .project-item {
   border-radius: 16px;
@@ -231,7 +235,7 @@ body, .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 60px;
+  /* ❌ remove margin-right */
 }
 
 .projects-desc {
@@ -258,6 +262,31 @@ body, .container {
   transform: scale(1.05);
   box-shadow: 0 6px 24px #a084f977;
 }
+
+.more-projects {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.more-btn {
+  display: inline-block;
+  background-color: #a084f9;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.more-btn:hover {
+  background-color: #7a5cf3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
 
 /* CONTACT */
 .contact {
@@ -307,7 +336,7 @@ body, .container {
 
 /* FOOTER */
 .footer {
-  background-color: #1a1a1a;  /* dark footer */
+  background-color: #1a1a1a;  
   color: #f0f0f0;
   text-align: center;
   padding: 20px 10px;
@@ -349,7 +378,7 @@ body, .container {
 }
 
 .big-heading {
-  font-size: 4rem; /* Bigger name */
+  font-size: 4rem; 
   font-weight: 800;
   margin-bottom: 0.5rem;
   margin-left: 50px;
@@ -362,7 +391,7 @@ body, .container {
 }
 
 .large-photo {
-  width: 450px; /* Bigger profile image */
+  width: 450px; 
   height: 450px;
   object-fit: cover;
   border-radius: 50%;
@@ -371,7 +400,7 @@ body, .container {
 }
 
 
-/* Smooth scroll effect */
+
 html {
   scroll-behavior: smooth;
 }

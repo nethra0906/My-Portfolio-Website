@@ -135,6 +135,7 @@ body, .container {
 .about-h2 {
   font-size: 3rem;
   margin-bottom: 16px;
+  padding-top: 60px;
 }
 
 .about-cards {

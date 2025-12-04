@@ -67,6 +67,7 @@ function Hero() {
         src="profile.jpg"
         alt="Profile"
       />
+      
     </section>
   );
 }
@@ -150,8 +151,8 @@ function Projects() {
   const projects = [
     {
       img: "project1.jpg",
-      name: "Hospital Management Website",
-      link: "https://github.com/nethra0906/WeCare-Hospitals-Website.git",
+      name: "Air Traffic Controller",
+      link: "https://github.com/nethra0906/Air-Traffic-Controller.git",
     },
     {
       img: "project2.jpg",
@@ -160,8 +161,8 @@ function Projects() {
     },
     {
       img: "project3.jpg",
-      name: "Design Portfolio",
-      link: "https://www.figma.com/file/akUGHzk9dwRLpWvpYRUfzC/Design-Portfolio",
+      name: "LLM Policy Retriever",
+      link: "https://github.com/nethra0906/LLM-Policy-Retriever.git",
     },
   ];
 

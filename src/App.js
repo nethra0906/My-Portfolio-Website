@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { useState } from "react";
 
 function App() {
   return (
@@ -20,14 +21,28 @@ function App() {
 
 // NAVBAR
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="logo">NK</div>
-      <ul className="nav-links">
-        <NavItem href="#hero">Home</NavItem>
-        <NavItem href="#about">About</NavItem>
-        <NavItem href="#projects">Projects</NavItem>
-        <NavItem href="#contact">Contact</NavItem>
+
+      {/* Hamburger */}
+      <div
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Nav links */}
+      <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
+        <NavItem href="#hero" onClick={() => setMenuOpen(false)}>Home</NavItem>
+        <NavItem href="#about" onClick={() => setMenuOpen(false)}>About</NavItem>
+        <NavItem href="#projects" onClick={() => setMenuOpen(false)}>Projects</NavItem>
+        <NavItem href="#contact" onClick={() => setMenuOpen(false)}>Contact</NavItem>
       </ul>
     </nav>
   );

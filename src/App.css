@@ -498,5 +498,267 @@ html {
   }
 }
 
+/* =========================
+   MOBILE RESPONSIVENESS FIX
+   (No design changes)
+   ========================= */
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+}
+
+/* HERO FIXES */
+@media (max-width: 768px) {
+  .hero-row {
+    flex-direction: column-reverse;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-desc {
+    margin: 16px auto;
+    text-align: center;
+  }
+
+  .hero-btn {
+    margin: 16px auto 0 auto;
+    display: block;
+    width: max-content;
+  }
+
+  .large-photo {
+    margin-right: 0;
+  }
+}
+
+/* NAVBAR FIX */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .nav-links {
+    align-items: flex-start;
+  }
+}
+
+/* ABOUT SECTION */
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .about-cards > div {
+    margin-right: 0;
+  }
+}
+
+/* SKILLS */
+@media (max-width: 768px) {
+  .skills-list {
+    padding: 0 16px;
+  }
+}
+
+/* PROJECTS */
+@media (max-width: 768px) {
+  .project-gallery {
+    gap: 40px;
+    padding: 0 16px;
+  }
+
+  .project-item {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* =========================
+   CONTACT FORM (MATCHES SITE)
+   ========================= */
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #b6b3f333;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a084f9;
+  box-shadow: 0 0 0 3px #a084f933;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Purple-tinted input interiors */
+.contact-form input,
+.contact-form textarea {
+  background: #f1ecff;          /* soft purple fill */
+  border: 1px solid #d6c9ff;
+  color: #444;
+}
+
+/* Placeholder text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6f6a85;
+}
+
+/* Cursor color */
+.contact-form input,
+.contact-form textarea {
+  caret-color: #a084f9;
+}
+
+/* Focus state */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #ebe3ff;
+  border-color: #a084f9;
+  box-shadow: 0 0 0 3px #a084f933;
+}
+
+
+.contact-btn {
+  align-self: center;
+  margin-top: 12px;
+  background: #a084f9;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #7a5cf3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px #a084f955;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 24px;
+  }
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  .big-heading {
+    font-size: 2.2rem;
+  }
+
+  .large-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .about-h2,
+  .skills-title,
+  .projects-h2,
+  .contact-h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* =========================
+   CONTACT FORM RESPONSIVE
+   ========================= */
+
+/* Tablets & smaller laptops */
+@media (max-width: 900px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .contact-form {
+    max-width: 100%;
+    padding: 24px;
+    margin: 30px 16px 0;
+    border-radius: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .contact-form textarea {
+    min-height: 130px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+}
+
+
+
+
 
 

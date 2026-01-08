@@ -1,9 +1,12 @@
 import React from "react";
 import "./App.css";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 function App() {
   return (
-    <div className="container">
+    <div className="container" id="scroll-root">
+
       <Header />
       <Hero />
       <About />
@@ -31,14 +34,51 @@ function Header() {
 }
 
 function NavItem({ children, href }) {
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const navbarOffset = 100;
+    const startY = window.pageYOffset;
+    const targetY =
+      target.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
+
+    const duration = 700; // ms
+    let startTime = null;
+
+    function animateScroll(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+
+      const progress = Math.min(elapsed / duration, 1);
+
+      // easeInOutCubic
+      const ease =
+        progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+      window.scrollTo(0, startY + (targetY - startY) * ease);
+
+      if (elapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  };
+
   return (
     <li>
-      <a className="nav-btn" href={href}>
+      <a href={href} onClick={handleClick} className="nav-btn">
         {children}
       </a>
     </li>
   );
 }
+
 
 // HERO
 function Hero() {
@@ -204,41 +244,68 @@ function Projects() {
   );
 }
 
-
-// CONTACT
 function Contact() {
-  const contacts = [
-    {
-      icon: "✉️",
-      title: "Email",
-      text: "nethra.krish0906@gmail.com",
-    },
+  const formRef = useRef();
 
-    {
-      icon: "📍",
-      title: "Location",
-      text: "Chennai, Tamil Nadu",
-    },
-  ];
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_gmail_portfolio",
+        "template_qpb9x99",
+        formRef.current,
+        "W2ICYcoz3zef3XQqI"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          alert("Something went wrong. Please try again.");
+          console.error(error);
+        }
+      );
+  };
 
   return (
     <section id="contact" className="contact">
       <h2 className="contact-h2">
-        Get In <span className="highlight">Touch</span>
+        Let’s <span className="highlight">Connect</span>
       </h2>
+
       <p className="contact-desc">
-        I'm always interested in new opportunities and exciting projects. Let's
-        discuss how we can work together!
+        Interested in collaborating or have something in mind?  
+        Feel free to leave a message below.
       </p>
-      <div className="contact-cards">
-        {contacts.map((card) => (
-          <div key={card.title} className="card">
-            <div className="card-icon">{card.icon}</div>
-            <h3>{card.title}</h3>
-            <p>{card.text}</p>
-          </div>
-        ))}
-      </div>
+
+      <form ref={formRef} className="contact-form" onSubmit={sendEmail}>
+        <input
+          type="text"
+          name="from_name"
+          placeholder="Your name"
+          required
+        />
+
+        <input
+          type="email"
+          name="from_email"
+          placeholder="Email address"
+          required
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your message"
+          rows="5"
+          required
+        ></textarea>
+
+        <button type="submit" className="contact-btn">
+          Send Message
+        </button>
+      </form>
     </section>
   );
 }

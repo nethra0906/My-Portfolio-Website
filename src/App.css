@@ -15,6 +15,7 @@ body, .container {
   align-items: center;
   padding: 15px 40px;
   border-bottom: 2px solid #a084f9;  
+  position: relative;
 }
 
 .logo {
@@ -868,6 +869,61 @@ section {
     display: flex;
   }
 }
+
+.navbar {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #a084f9;
+  position: relative; /* 🔥 THIS FIXES IT */
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 0;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
 
 
 

@@ -25,26 +25,25 @@ function Header() {
 
   return (
     <nav className="navbar">
-      <div className="logo">NK</div>
+  <div className="logo">NK</div>
 
-      {/* Hamburger */}
-      <div
-        className={`hamburger ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <div
+    className="hamburger"
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-      {/* Nav links */}
-      <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
-        <NavItem href="#hero" onClick={() => setMenuOpen(false)}>Home</NavItem>
-        <NavItem href="#about" onClick={() => setMenuOpen(false)}>About</NavItem>
-        <NavItem href="#projects" onClick={() => setMenuOpen(false)}>Projects</NavItem>
-        <NavItem href="#contact" onClick={() => setMenuOpen(false)}>Contact</NavItem>
-      </ul>
-    </nav>
+  <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
+    <NavItem href="#hero" onClick={() => setMenuOpen(false)}>Home</NavItem>
+    <NavItem href="#about" onClick={() => setMenuOpen(false)}>About</NavItem>
+    <NavItem href="#projects" onClick={() => setMenuOpen(false)}>Projects</NavItem>
+    <NavItem href="#contact" onClick={() => setMenuOpen(false)}>Contact</NavItem>
+  </ul>
+</nav>
+
   );
 }
 

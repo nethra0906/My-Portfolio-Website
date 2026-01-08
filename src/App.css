@@ -843,13 +843,13 @@ section {
   .hamburger {
     display: flex;
     position: absolute;
-    right: 16px;   /* 👈 FULL RIGHT */
+    right: 16px;   
     top: 50%;
     transform: translateY(-50%);
   }
 
   .logo {
-    margin-left: 16px;
+    margin-left: 0px;
   }
 
   .nav-links {
@@ -878,7 +878,7 @@ section {
   align-items: center;
   padding: 15px 16px;
   border-bottom: 2px solid #a084f9;
-  position: relative; /* 🔥 THIS FIXES IT */
+  position: relative; 
 }
 
 /* Hamburger */
@@ -907,7 +907,7 @@ section {
   }
 
   .logo {
-    margin-left: 0; /* NK fully left */
+    margin-left: 0; 
   }
 }
 
@@ -915,7 +915,7 @@ section {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 100%;              /* 👈 attaches directly below navbar */
+    top: 100%;              
     left: 0;
     width: 100%;
     background: #1a1a1a;
@@ -924,8 +924,8 @@ section {
     gap: 28px;
     padding: 32px 0;
     display: none;
-    margin: 0;              /* 👈 removes gap */
-    border-top: none;       /* 👈 removes separation feel */
+    margin: 0;              
+    border-top: none;       
   }
 
   .nav-links.show {
